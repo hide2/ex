@@ -26,7 +26,7 @@ class Auth {
 			// verify sign
 			$secret = \Ex\Redis::get('api:'.$key);
 			$post_data = http_build_query($req->params, '', '&');
-			$_sign = hash('sha256', urldecode($post_data).$secret);
+			$_sign = base64_encode(hash_hmac('sha256', urldecode($post_data), $secret, true));
 			if ($sign !== $_sign) {
 				return [false, ['code'=>1002, 'message'=>'wrong sign']];
 			}
@@ -47,7 +47,7 @@ class Auth {
 // define('REDIS_PORT', 6379);
 // $key = '111';
 // $secret = '222';
-// $sign = hash('sha256', urldecode("nonce=1553769093333").$secret);
+// $sign = base64_encode(hash_hmac('sha256', urldecode("nonce=1553769093333"), $secret, true));
 // $_SERVER['HTTP_KEY'] = $key;
 // $_SERVER['HTTP_SIGN'] = $sign;
 // \Ex\Redis::set('api:'.$key, $secret);
