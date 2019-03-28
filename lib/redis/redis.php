@@ -12,18 +12,32 @@ class Redis {
 		return self::$_instance;
 	}
 
+	public static function get($k) {
+		if (!defined('REDIS_HOST') || !defined('REDIS_PORT')) {
+			throw new \Exception("REDIS_HOST/PORT not defined");
+		}
+		return \Ex\Redis::getInstance()->get($k);
+	}
+
 	public static function set($k, $v) {
 		if (!defined('REDIS_HOST') || !defined('REDIS_PORT')) {
-			throw new Exception("REDIS_HOST/PORT not defined");
+			throw new \Exception("REDIS_HOST/PORT not defined");
 		}
 		\Ex\Redis::getInstance()->set($k, $v);
 	}
 
-	public static function get($k) {
+	public static function setTimeout($k, $ttl) {
 		if (!defined('REDIS_HOST') || !defined('REDIS_PORT')) {
-			throw new Exception("REDIS_HOST/PORT not defined");
+			throw new \Exception("REDIS_HOST/PORT not defined");
 		}
-		return \Ex\Redis::getInstance()->get($k);
+		return \Ex\Redis::getInstance()->setTimeout($k, $ttl);
+	}
+
+	public static function del($k) {
+		if (!defined('REDIS_HOST') || !defined('REDIS_PORT')) {
+			throw new \Exception("REDIS_HOST/PORT not defined");
+		}
+		return \Ex\Redis::getInstance()->del($k);
 	}
 }
 
