@@ -17,5 +17,4 @@
   - message
   - ip
   - log
-  - http
   - rsa
