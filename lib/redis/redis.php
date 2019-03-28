@@ -28,7 +28,7 @@ class Redis {
 }
 
 // test
-define('REDIS_HOST', '127.0.0.1');
-define('REDIS_PORT', 6379);
-\Ex\Redis::set('test', '123');
-var_dump(\Ex\Redis::get('test'));
+// define('REDIS_HOST', '127.0.0.1');
+// define('REDIS_PORT', 6379);
+// \Ex\Redis::set('test', '123');
+// var_dump(\Ex\Redis::get('test'));
