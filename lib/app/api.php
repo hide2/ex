@@ -70,6 +70,9 @@ class Api extends Worker
 		$ps = [];
 		foreach ($req->params as $key => $value) {
 			$ps[$key] = $value;
+			if (strpos($key, 'password') !== false) {
+				$ps[$key] = '****';
+			}
 		}
 
 		echo "[".date('Y-m-d H:i:s')."] ".$req->method." ".$req->path." ".json_encode($ps, JSON_UNESCAPED_UNICODE)." ".$req->_from_ip." ".$req->_refer."\n";
