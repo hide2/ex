@@ -1,2 +1,21 @@
 # ex
-ex
+- web(前端)
+- user(用户)
+- account(账务)
+- order(订单)
+- engine(撮合)
+- rest(API)
+- websocket(API)
+- wallet(充提)
+- admin(后台)
+- lib
+  - auth
+  - session
+  - db
+  - kafka
+  - redis
+  - message
+  - ip
+  - log
+  - http
+  - rsa
