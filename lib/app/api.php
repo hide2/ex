@@ -8,11 +8,11 @@ use \Workerman\Protocols\Http;
 
 class Api extends Worker
 {
-	private $map_get = array();
-	private $map_post = array();
-	private $map_html = array();
-	private $map_before = array();
-	private $map_after = array();
+	private $map_get = [];
+	private $map_post = [];
+	private $map_html = [];
+	private $map_before = [];
+	private $map_after = [];
 
 	public function get($path, callable $callback){
 		$this->map_get[$path] = $callback;
@@ -46,7 +46,6 @@ class Api extends Worker
 			$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
 		}
 		$req->_from_ip = $ip;
-
 		// refer
 		$req->_refer = 'REF=';
 		if (isset($_SERVER['HTTP_REFERER'])) {

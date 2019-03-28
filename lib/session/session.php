@@ -37,15 +37,15 @@ class Session {
 }
 
 // test
-define('REDIS_HOST', '127.0.0.1');
-define('REDIS_PORT', 6379);
-$sid = \Ex\Session::new_session_id();
-var_dump($sid);
-\Ex\Session::set($sid, ['user_id'=>123,'name'=>'test']);
-var_dump(\Ex\Session::get($sid));
-\Ex\Session::refresh($sid, 1);
-var_dump(\Ex\Session::get($sid));
-sleep(2);
-var_dump(\Ex\Session::get($sid));
-\Ex\Session::clear($sid);
-var_dump(\Ex\Session::get($sid));
+// define('REDIS_HOST', '127.0.0.1');
+// define('REDIS_PORT', 6379);
+// $sid = \Ex\Session::new_session_id();
+// var_dump($sid);
+// \Ex\Session::set($sid, ['user_id'=>123,'name'=>'test']);
+// var_dump(\Ex\Session::get($sid));
+// \Ex\Session::refresh($sid, 1);
+// var_dump(\Ex\Session::get($sid));
+// sleep(2);
+// var_dump(\Ex\Session::get($sid));
+// \Ex\Session::clear($sid);
+// var_dump(\Ex\Session::get($sid));
